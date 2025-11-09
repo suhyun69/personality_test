@@ -1,3 +1,4 @@
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -15,6 +16,26 @@ class MainPage extends StatefulWidget {
 
 class _MainPage extends State<MainPage> {
 
+  final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
+
+  String welcomeTitle = '';
+  bool bannerUse = false;
+  int itemHeight = 50;
+
+  @override
+  void initState() {
+    super.initState();
+    remoteConfigInit();
+  }
+
+  void remoteConfigInit() async {
+    await remoteConfig.fetch();
+    await remoteConfig.activate();
+    welcomeTitle = remoteConfig.getString('welcome');
+    bannerUse = remoteConfig.getBool('banner');
+    itemHeight = remoteConfig.getInt('item_height');
+  }
+
   // JSON 파일을 비동기로 로드하는 함수
   Future<String> loadAsset() async {
     return await rootBundle.loadString('res/api/list.json');
@@ -23,6 +44,11 @@ class _MainPage extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: bannerUse
+        ? AppBar(
+          title: Text(remoteConfig.getString('welcome'))
+        )
+        : null,
       body: FutureBuilder<String> (
         future: loadAsset(),
         builder: (context, snapshot) {
@@ -63,7 +89,7 @@ class _MainPage extends State<MainPage> {
                         }
                       },
                       child: SizedBox(
-                        height: 50,
+                        height: itemHeight.toDouble(),
                         child: Card(
                           child: Text(
                             list['questions'][index]['title'].toString()
