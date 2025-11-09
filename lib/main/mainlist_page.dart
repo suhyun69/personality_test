@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
+import '../sub/question_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -39,8 +40,11 @@ class _MainPage extends State<MainPage> {
                   itemCount: list['count'],
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: () {
-
+                      onTap: () async {
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) {
+                              return QuestionPage(question: list['questions'][index]['file'].toString());
+                        }));
                       },
                       child: SizedBox(
                         height: 50,
