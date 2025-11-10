@@ -100,6 +100,27 @@
             </list>
           </value>
         </entry>
+        <entry key="firebase_database">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_database-12.0.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="firebase_database_platform_interface">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_database_platform_interface-0.2.6+15/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="firebase_database_web">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_database_web-0.2.7/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="firebase_remote_config">
           <value>
             <list>
@@ -299,6 +320,9 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_core-4.2.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_core_platform_interface-6.0.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_core_web-3.3.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_database-12.0.4/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_database_platform_interface-0.2.6+15/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_database_web-0.2.7/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_remote_config-6.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_remote_config_platform_interface-2.0.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_remote_config_web-1.10.0/lib" />
